@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5B7D2663-379B-4A72-A65C-357F318B90F2}</ProjectGuid>
+    <ProjectGuid>{578ED431-C4B4-474C-BA0E-1CC6B1C20DEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CapaVistaNav</RootNamespace>
-    <AssemblyName>CapaVistaNav</AssemblyName>
+    <RootNamespace>CapaVistaPrototipo</RootNamespace>
+    <AssemblyName>CapaVistaPrototipo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -29,11 +29,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Seguridad_Controlador">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\..\Program Files\UMG\Instalador General HSC\Seguridad_Controlador.dll</HintPath>
+    <Reference Include="CapaControladorPrototipo">
+      <HintPath>..\CapaControladorPrototipo\bin\Debug\CapaControladorPrototipo.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaVistaNav">
+      <HintPath>..\..\..\Componentes\Navegador\CapaVista\bin\Debug\CapaVistaNav.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,19 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Componentes\Utilidades\utilidadesConsultasI.cs" />
-    <Compile Include="Componentes\Utilidades\utilidadesReporte.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Mantenimiento\frMantenimientoAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Mantenimiento\frMantenimientoAlumno.Designer.cs">
+      <DependentUpon>frMantenimientoAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Navegador.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Mantenimiento\frMantenimientoCurso.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Navegador.Designer.cs">
-      <DependentUpon>Navegador.cs</DependentUpon>
+    <Compile Include="Mantenimiento\frMantenimientoCurso.Designer.cs">
+      <DependentUpon>frMantenimientoCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIPrototipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIPrototipo.Designer.cs">
+      <DependentUpon>MDIPrototipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -69,13 +75,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="Mantenimiento\frMantenimientoAlumno.resx">
+      <DependentUpon>frMantenimientoAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Navegador.resx">
-      <DependentUpon>Navegador.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="Mantenimiento\frMantenimientoCurso.resx">
+      <DependentUpon>frMantenimientoCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIPrototipo.resx">
+      <DependentUpon>MDIPrototipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,26 +90,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaControlador\CapaControladorNav.csproj">
-      <Project>{a6119354-7576-487a-a44e-a5c332a20f4a}</Project>
-      <Name>CapaControladorNav</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Imagenes\anterior.png" />
-    <Content Include="Imagenes\ayuda.png" />
-    <Content Include="Imagenes\buscar.png" />
-    <Content Include="Imagenes\cancelar.png" />
-    <Content Include="Imagenes\eliminar.png" />
-    <Content Include="Imagenes\fin.png" />
-    <Content Include="Imagenes\guardar.png" />
-    <Content Include="Imagenes\imprimir.png" />
-    <Content Include="Imagenes\ingresar.png" />
-    <Content Include="Imagenes\inicio.png" />
-    <Content Include="Imagenes\modificar.png" />
-    <Content Include="Imagenes\refrescar.png" />
-    <Content Include="Imagenes\salir.png" />
-    <Content Include="Imagenes\siguiente.png" />
+    <Folder Include="Proceso\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

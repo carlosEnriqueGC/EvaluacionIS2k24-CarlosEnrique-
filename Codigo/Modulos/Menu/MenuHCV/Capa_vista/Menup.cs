@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Seguridad_Controlador;
 using Vista_Seguridad;
-using Vista_PrototipoMenu;
+using CapaVistaPrototipo;
 
 //Comentado por George Mayén 25/02/2023
 namespace MenuHCV
@@ -33,7 +33,7 @@ namespace MenuHCV
             cn.getAccesoApp(5000, apps[4]);  //Modulo Bancos
             cn.getAccesoApp(6000, apps[5]);  //Modulo Nominas
             cn.getAccesoApp(7000, apps[6]);  //Modulo Hoteleria
-            cn.getAccesoApp(8000, apps[7]);  //Modulo Prototipo
+            cn.getAccesoApp(1000, apps[7]);  //Modulo Prototipo
 
 
 
@@ -87,9 +87,9 @@ namespace MenuHCV
 
         private void btnHoteleria_Click(object sender, EventArgs e)
         {
-            cn.setBtitacora("7000", "Ingreso Hoteleria");
-            Vista_PrototipoMenu.MenuHoteleria frm = new Vista_PrototipoMenu.MenuHoteleria();
-            frm.Show();
+           // cn.setBtitacora("1000", "Ingreso Hoteleria");
+           // CapaVistaPrototipo.MDIPrototipo frm = new CapaVistaPrototipo.MDIPrototipo();
+           // frm.Show();
         }
 
         private void btnCxC_Click(object sender, EventArgs e)
@@ -103,8 +103,11 @@ namespace MenuHCV
         }
 
         private void btnPrototipo_Click(object sender, EventArgs e)
-        {
+        {//carlos enrique 29 de febrero
             cn.setBtitacora("8000", "Ingreso Prototipo");
+            CapaVistaPrototipo.MDIPrototipo frm = new CapaVistaPrototipo.MDIPrototipo();
+            frm.Show();
+           
         }
 
     }
